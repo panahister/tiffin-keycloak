@@ -1,0 +1,10 @@
+.git
+.github
+.runtime
+artifacts
+__pycache__
+*.pyc
+*.log
+.env
+.env.*
+!.env.example

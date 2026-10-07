@@ -1,0 +1,178 @@
+/* Tiffin account-console theme. Values mirror the reviewed MP Frontend Tiffin DLS. */
+:root {
+  color-scheme: light;
+  --tiffin-action: #6267e8;
+  --tiffin-action-hover: #5156d8;
+  --tiffin-action-pressed: #4045bd;
+  --tiffin-on-action: #ffffff;
+  --tiffin-canvas: #f5f7f6;
+  --tiffin-panel: #ffffff;
+  --tiffin-subtle: #f1f4f2;
+  --tiffin-text: #141d22;
+  --tiffin-muted: #5a6870;
+  --tiffin-border: #cbd3d6;
+  --tiffin-focus: #6267e8;
+  --tiffin-danger: #c92f37;
+  --pf-v5-global--primary-color--100: #6267e8;
+  --pf-v5-global--primary-color--200: #5156d8;
+  --pf-v5-global--BackgroundColor--100: #ffffff;
+  --pf-v5-global--BackgroundColor--200: #f5f7f6;
+  --pf-v5-global--Color--100: #141d22;
+  --pf-v5-global--Color--200: #5a6870;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  color: var(--tiffin-text);
+  background:
+    radial-gradient(circle at 8% 8%, rgb(98 103 232 / 16%), transparent 27rem),
+    var(--tiffin-canvas);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.pf-v5-c-page,
+.pf-v5-c-page__main,
+.pf-v5-c-page__main-section {
+  background: transparent;
+}
+
+.pf-v5-c-page__header,
+.pf-v5-c-masthead {
+  border-bottom: 1px solid var(--tiffin-border);
+  background: var(--tiffin-panel);
+  box-shadow: 0 2px 12px rgb(20 29 34 / 6%);
+}
+
+.pf-v5-c-page__sidebar,
+.pf-v5-c-page__sidebar-body,
+.pf-v5-c-nav {
+  background: #182127;
+}
+
+.pf-v5-c-nav__link { color: #e5ecef; }
+
+.pf-v5-c-nav__link.pf-m-current,
+.pf-v5-c-nav__link:hover {
+  color: #ffffff;
+  background: rgb(98 103 232 / 14%);
+}
+
+.pf-v5-c-nav__link.pf-m-current::after { border-color: var(--tiffin-action); }
+
+.pf-v5-c-card {
+  border: 1px solid var(--tiffin-border);
+  border-radius: 16px;
+  background: var(--tiffin-panel);
+  box-shadow: 0 14px 36px rgb(20 29 34 / 9%);
+}
+
+.pf-v5-c-title,
+h1,
+h2,
+h3 {
+  color: var(--tiffin-text);
+  letter-spacing: -0.025em;
+}
+
+.pf-v5-c-form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  min-height: 46px;
+  border: 1px solid var(--tiffin-border);
+  border-radius: 10px;
+  color: var(--tiffin-text);
+  background: var(--tiffin-panel);
+  box-shadow: 0 1px 2px rgb(20 29 34 / 5%);
+}
+
+.pf-v5-c-form-control:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--tiffin-focus);
+  outline: 0;
+  box-shadow: 0 0 0 4px rgb(98 103 232 / 18%);
+}
+
+.pf-v5-c-button.pf-m-primary,
+button[type="submit"] {
+  min-height: 46px;
+  border: 1px solid #5156d8;
+  border-radius: 10px;
+  background: var(--tiffin-action);
+  color: var(--tiffin-on-action);
+  font-weight: 750;
+}
+
+.pf-v5-c-button.pf-m-primary:hover,
+button[type="submit"]:hover { background: var(--tiffin-action-hover); }
+
+.pf-v5-c-button.pf-m-primary:active,
+button[type="submit"]:active { background: var(--tiffin-action-pressed); }
+
+a {
+  color: #4f54d8;
+  font-weight: 650;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgb(98 103 232 / 28%);
+  outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --tiffin-action: #8fa3ff;
+    --tiffin-action-hover: #a9b8ff;
+    --tiffin-action-pressed: #7488ee;
+    --tiffin-on-action: #08111f;
+    --tiffin-canvas: #10161a;
+    --tiffin-panel: #182127;
+    --tiffin-subtle: #202b32;
+    --tiffin-text: #f4f7f8;
+    --tiffin-muted: #b7c2c8;
+    --tiffin-border: #35444d;
+    --tiffin-focus: #8fa3ff;
+    --tiffin-danger: #ff7b82;
+    --pf-v5-global--primary-color--100: #8fa3ff;
+    --pf-v5-global--primary-color--200: #a9b8ff;
+    --pf-v5-global--BackgroundColor--100: #182127;
+    --pf-v5-global--BackgroundColor--200: #10161a;
+    --pf-v5-global--Color--100: #f4f7f8;
+    --pf-v5-global--Color--200: #b7c2c8;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 8% 8%, rgb(143 163 255 / 10%), transparent 27rem),
+      var(--tiffin-canvas);
+  }
+
+  a { color: #a9b8ff; }
+}
+
+@media (max-width: 700px) {
+  .pf-v5-c-page__main-section { padding: 20px 14px; }
+  .pf-v5-c-card { border-radius: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "realm": "tiffin",
+  "ownershipTag": "tiffin-local-authorization-v1",
+  "resourceServer": {
+    "id": "tiffin-authorization",
+    "name": "Tiffin authorization resources"
+  },
+  "resources": [
+    {
+      "id": "catalog",
+      "displayName": "Restaurant catalog",
+      "uris": ["/v1/restaurants", "/v1/restaurants/*"],
+      "scopes": ["catalog.read", "catalog.write"]
+    },
+    {
+      "id": "orders",
+      "displayName": "Customer orders",
+      "uris": ["/v1/orders", "/v1/orders/*"],
+      "scopes": ["orders.read", "orders.create", "orders.cancel"]
+    },
+    {
+      "id": "kitchen",
+      "displayName": "Kitchen workflow",
+      "uris": ["/v1/kitchen/*"],
+      "scopes": ["kitchen.read", "kitchen.operate"]
+    },
+    {
+      "id": "dispatch",
+      "displayName": "Courier dispatch",
+      "uris": ["/tiffin.dispatch.v1/*"],
+      "scopes": ["dispatch.read", "dispatch.operate"]
+    },
+    {
+      "id": "tracking",
+      "displayName": "Delivery tracking",
+      "uris": ["/v1/tracking/*"],
+      "scopes": ["tracking.read", "tracking.write"]
+    },
+    {
+      "id": "notifications",
+      "displayName": "Customer notifications",
+      "uris": ["/v1/notifications/*"],
+      "scopes": ["notifications.read", "notifications.write"]
+    },
+    {
+      "id": "media",
+      "displayName": "Restaurant and menu media",
+      "uris": ["/v1/media/*"],
+      "scopes": ["media.read", "media.write"]
+    },
+    {
+      "id": "identity-administration",
+      "displayName": "Keycloak identity administration",
+      "uris": ["/admin/realms/tiffin/*"],
+      "scopes": ["identity.admin"]
+    }
+  ],
+  "roleAccess": [
+    {
+      "role": "customer",
+      "resources": {
+        "catalog": ["catalog.read"],
+        "orders": ["orders.read", "orders.create", "orders.cancel"],
+        "tracking": ["tracking.read"],
+        "notifications": ["notifications.read", "notifications.write"]
+      }
+    },
+    {
+      "role": "restaurant-manager",
+      "resources": {
+        "catalog": ["catalog.read", "catalog.write"],
+        "kitchen": ["kitchen.read", "kitchen.operate"],
+        "media": ["media.read", "media.write"]
+      }
+    },
+    {
+      "role": "courier",
+      "resources": {
+        "dispatch": ["dispatch.read", "dispatch.operate"],
+        "tracking": ["tracking.read", "tracking.write"]
+      }
+    },
+    {
+      "role": "city-admin",
+      "resources": {
+        "catalog": ["catalog.read", "catalog.write"],
+        "kitchen": ["kitchen.read", "kitchen.operate"],
+        "media": ["media.read", "media.write"]
+      }
+    },
+    {
+      "role": "platform-admin",
+      "resources": {
+        "catalog": ["catalog.read", "catalog.write"],
+        "orders": ["orders.read", "orders.create", "orders.cancel"],
+        "kitchen": ["kitchen.read", "kitchen.operate"],
+        "dispatch": ["dispatch.read", "dispatch.operate"],
+        "tracking": ["tracking.read", "tracking.write"],
+        "notifications": ["notifications.read", "notifications.write"],
+        "media": ["media.read", "media.write"],
+        "identity-administration": ["identity.admin"]
+      }
+    }
+  ]
+}

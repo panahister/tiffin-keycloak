@@ -1,0 +1,15 @@
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*.log
+.env
+.env.*
+!.env.example
+*.secret
+*.secrets
+.runtime/
+artifacts/
+__pycache__/
+*.pyc

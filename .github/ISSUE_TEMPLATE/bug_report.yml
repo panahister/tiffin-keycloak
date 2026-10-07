@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible identity, event, authorization, or theme defect
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never include passwords, tokens, cookies, personal data, or production realm exports.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include Keycloak image, database, Kafka, browser, locale, and repository revision.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and redacted evidence
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: This report contains no secret or personal data.
+          required: true
+        - label: This is not an undisclosed security vulnerability.
+          required: true

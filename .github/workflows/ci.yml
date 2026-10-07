@@ -1,0 +1,28 @@
+name: verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Validate authorization and repository contracts
+        run: python -m unittest discover -s tests -v
+      - name: Build the source Keycloak image and run the provider self-test
+        run: docker build --file product/tiffin-local/docker/Dockerfile --tag tiffin-keycloak:verify .

@@ -1,0 +1,20 @@
+/* Versioned cache-safe correction for PatternFly's padded native-select chevron. */
+
+.pf-v5-c-login__main-header-utilities .pf-v5-c-form-control__utilities {
+  inset-inline-end: 24px !important;
+  z-index: 2;
+}
+
+.pf-v5-c-login__main-header-utilities .pf-v5-c-form-control__toggle-icon {
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+.pf-v5-c-login__main-header-utilities .pf-v5-c-form-control__toggle-icon svg {
+  display: block !important;
+  width: 10px !important;
+  height: 10px !important;
+}
